@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import { useNavigate } from 'react-router-dom';
 
 const AddNewItem = () => {
     const { register, handleSubmit } = useForm();
@@ -19,9 +20,10 @@ const AddNewItem = () => {
             console.log(result)
         })
     };
+    
     return (
         <div  >
-            <h2>Add New Item</h2>
+            <h2 className='text-center text-success m-5' >Add New Item</h2>
             <form className=' w-50 mx-auto'  onSubmit={handleSubmit(onSubmit)}>
             <input className='mb-2' placeholder='Item Name' {...register("name", { required: true, maxLength: 20 })} /> <br />
             <input className='mb-2' placeholder='Description' {...register("shortDescription")} /> <br />
