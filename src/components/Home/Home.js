@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
 import HomeInventory from '../HomeInventory/HomeInventory';
 import Banner from './../Header/Banner/Banner'
 
