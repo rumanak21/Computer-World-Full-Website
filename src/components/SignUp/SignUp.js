@@ -1,24 +1,51 @@
 import React from 'react';
-import { useForm } from "react-hook-form";
+
+import auth from '../../firebase.init';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 const SignUp = () => {
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => {
-        console.log(data)
-        
-    };
     
+
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+    const handleRegister = async (event) => {
+        event.preventDefault();
+        const name = event.target.name.value;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+
+
+        await createUserWithEmailAndPassword(email, password);
+
+        console.log('Updated profile');
+        // 
+    }
+
     return (
-        <div  >
-            <h2 className='text-center text-success m-5' >SIgn Up Here</h2>
-            <form className=' w-50 mx-auto'  onSubmit={handleSubmit(onSubmit)}>
-            <input className='mb-2' placeholder='Item Name' {...register("name", { required: true, maxLength: 20 })} /> <br />
-            <input className='mb-2' placeholder='Description' {...register("shortDescription")} /> <br />
-            <input className='mb-2' placeholder='Supplier Name' type="text" {...register("supplier")} /> <br />
-            <input className='mb-2' placeholder='Price' type="number" {...register("price")} /> <br />
-            <input className='mb-2' placeholder='Photo URL' type="text" {...register("picture")} /> <br />
-            <input type="submit" />
-        </form>
+        <div className='m-5 w-50 mx-auto'>
+            <h2 > Sign UP Here</h2>
+            <form onSubmit={handleRegister}>
+                <input className='w-50 mx-auto mb-2 text-center' type="text" name="name" id="1" placeholder='Full Name' /> <br />
+
+                <input className=' w-50 mx-auto mb-2 text-center' type="email" name="email" id="2" placeholder='Email Address' required /> <br />
+
+                <input className=' w-50 mx-auto mb-2 text-center' type="password" name="password" id="3" placeholder='Password' required /> <br />
+
+
+
+                <input
+
+                    className='btn btn-primary mt-2 w-50 mx-auto'
+                    type="submit"
+                    value="Register" />
+            </form>
+
+
         </div>
     );
 };
