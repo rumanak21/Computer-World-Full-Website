@@ -1,5 +1,6 @@
 
 import './App.css';
+import Footer from './components/Footer/Footer';
 import Banner from './components/Header/Banner/Banner';
 import Header from './components/Header/Header';
 import HomeInventory from './components/HomeInventory/HomeInventory';
@@ -11,6 +12,7 @@ function App() {
       <Header></Header>
       <Banner></Banner>
       <HomeInventory></HomeInventory>
+      <Footer></Footer>
     </div>
   );
 }
