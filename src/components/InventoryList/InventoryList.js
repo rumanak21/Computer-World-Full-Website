@@ -6,11 +6,19 @@ const InventoryList = () => {
     const [products] = useAllProducts();
     return (
         <div className='container' >
+            <div className='m-5'>
+            <Button variant="primary">Add New Item</Button>
+            </div>
             {
-                products.map(product => <div>
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src= {product.picture} />
-                        <Card.Body>
+                products.map(product => <div className='row row-cols-lg-2 row-cols-sm-1 m-4'>
+                    
+                    <div>
+                    <Card style={{ width: '25rem' }}>
+                        <Card.Img variant="top" src= {product.picture} /> 
+                    </Card>
+                    </div>
+                    <div>
+                    <Card.Body>
                             <Card.Title>{product.name}</Card.Title>
                             <Card.Text>
                             {product.shortDescription}
@@ -21,9 +29,10 @@ const InventoryList = () => {
                             <Card.Text> Price: 
                             {product.price} TK
                             </Card.Text>
-                            <Button variant="primary">Go somewhere</Button>
+                            <Button variant="primary">Delete Item</Button>
                         </Card.Body>
-                    </Card>
+                    </div>
+                    
                 </div>)
             }
         </div>
