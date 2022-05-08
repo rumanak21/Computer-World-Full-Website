@@ -4,7 +4,7 @@ const useItemDetails = (itemId) =>{
     const [products, setProducts] = useState([]);
 
     useEffect( ()=>{
-        fetch(`http://localhost:5000/product/${itemId}`)
+        fetch(`https://immense-taiga-82894.herokuapp.com/product/${itemId}`)
         .then(res => res.json())
         .then(data => setProducts(data));
     }, [itemId]);
