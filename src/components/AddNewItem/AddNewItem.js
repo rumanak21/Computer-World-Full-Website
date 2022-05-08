@@ -24,13 +24,13 @@ const AddNewItem = () => {
     return (
         <div  >
             <h2 className='text-center text-success m-5' >Add New Item</h2>
-            <form className=' w-50 mx-auto'  onSubmit={handleSubmit(onSubmit)}>
-            <input className='mb-2' placeholder='Item Name' {...register("name", { required: true, maxLength: 20 })} /> <br />
-            <input className='mb-2' placeholder='Description' {...register("shortDescription")} /> <br />
-            <input className='mb-2' placeholder='Supplier Name' type="text" {...register("supplier")} /> <br />
-            <input className='mb-2' placeholder='Price' type="number" {...register("price")} /> <br />
-            <input className='mb-2' placeholder='Photo URL' type="text" {...register("picture")} /> <br />
-            <input type="submit" />
+            <form   onSubmit={handleSubmit(onSubmit)}>
+            <input className='mb-2 w-50 d-block mx-auto' placeholder='Item Name' {...register("name", { required: true, maxLength: 20 })} /> <br />
+            <input className='mb-2 w-50 d-block mx-auto' placeholder='Description' {...register("shortDescription")} /> <br />
+            <input className='mb-2 w-50 d-block mx-auto' placeholder='Supplier Name' type="text" {...register("supplier")} /> <br />
+            <input className='mb-2 w-50 d-block mx-auto' placeholder='Price' type="number" {...register("price")} /> <br />
+            <input className='mb-2 w-50 d-block mx-auto' placeholder='Photo URL' type="text" {...register("picture")} /> <br />
+            <input className='w-50 d-block mx-auto' type="submit" />
         </form>
         </div>
     );
