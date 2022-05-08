@@ -1,17 +1,23 @@
 
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer/Footer';
-import Banner from './components/Header/Banner/Banner';
 import Header from './components/Header/Header';
-import HomeInventory from './components/HomeInventory/HomeInventory';
-import InventoryList from './components/InventoryList/InventoryList';
+import Home from './components/Home/Home';
+import ManageItem from './components/ManageItem/ManageItem';
+
 
 function App() {
   return (
     <div>
       <Header></Header>
-      <Banner></Banner>
-      <HomeInventory></HomeInventory>
+    <Routes>
+      <Route path='/' element= {<Home></Home>} ></Route>
+      <Route path='/home' element= {<Home></Home>} ></Route>
+      <Route path='/manageitem/:itemId' element= {<ManageItem></ManageItem>} ></Route>
+    </Routes>
+
+      
       <Footer></Footer>
     </div>
   );
