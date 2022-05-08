@@ -23,11 +23,9 @@ const InventoryList = () => {
                             <Card.Text>
                             {product.shortDescription}
                             </Card.Text>
-                            <Card.Text> Supplier Name:
-                            {product.supplier}
+                            <Card.Text> Supplier Name: {product.supplier}
                             </Card.Text>
-                            <Card.Text> Price: 
-                            {product.price} TK
+                            <Card.Text> Price:  {product.price} TK
                             </Card.Text>
                             <Button variant="primary">Delete Item</Button>
                         </Card.Body>
