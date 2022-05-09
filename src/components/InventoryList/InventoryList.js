@@ -12,7 +12,8 @@ const InventoryList = () => {
     const handleDeleteBtn = id => {
         const permission = window.confirm('Are you want to delete it?')
         if(permission){
-            const url = `https://immense-taiga-82894.herokuapp.com/product/${id}`;
+            const url = `https://immense-taiga-82894.herokuapp.com/product/${id}`
+            console.log(url)
             fetch(url, {
                 method: 'DELETE'
             })
@@ -20,9 +21,9 @@ const InventoryList = () => {
             .then(data => 
                 console.log(data)
             );
-            const remaining = products.filter(product => product._id !== id)
-            console.log(remaining)
-            setProducts(remaining)
+            // const remaining = products.filter(product => product._id !== id)
+            // console.log(remaining)
+            // setProducts(remaining)
         }
 
        console.log('dlt clk')
