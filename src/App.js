@@ -9,6 +9,7 @@ import Home from './components/Home/Home';
 import InventoryList from './components/InventoryList/InventoryList';
 import ManageItem from './components/ManageItem/ManageItem';
 import PageNotFound from './components/PageNotFound/PageNotFound';
+import RequireAuth from './components/RequireAuth/RequireAuth';
 import SignIn from './components/SignIn/SignIn';
 import SignUp from './components/SignUp/SignUp';
 
@@ -23,7 +24,7 @@ function App() {
       <Route path='/inventory' element= {<InventoryList></InventoryList> } ></Route>
       <Route path='/manageitem/:itemId' element= {<ManageItem></ManageItem>} ></Route>
       <Route path='/blog' element= {<Blog></Blog>} ></Route>
-      <Route path='/addnewitem' element= {<AddNewItem></AddNewItem>} ></Route>
+      <Route path='/addnewitem' element= {<RequireAuth><AddNewItem></AddNewItem></RequireAuth>} ></Route>
       <Route path='/signup' element= {<SignUp></SignUp>} ></Route>
       <Route path='/signin' element= {<SignIn></SignIn>} ></Route>
       <Route path='/*' element= {<PageNotFound></PageNotFound>} ></Route>
