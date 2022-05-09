@@ -5,7 +5,7 @@ import auth from '../../firebase.init';
 
 const SignIn = () => {
     let errorElement;
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, user, error] = useSignInWithGoogle(auth);
 
     const [
         signInWithEmailAndPassword,

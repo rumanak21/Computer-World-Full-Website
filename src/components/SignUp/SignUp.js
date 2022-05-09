@@ -8,9 +8,7 @@ const SignUp = () => {
 
     const [
         createUserWithEmailAndPassword,
-        user,
-        loading,
-        error,
+        
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const handleRegister = async (event) => {
@@ -22,8 +20,7 @@ const SignUp = () => {
 
         await createUserWithEmailAndPassword(email, password);
 
-        console.log('Updated profile');
-        // 
+        
     }
 
     return (
