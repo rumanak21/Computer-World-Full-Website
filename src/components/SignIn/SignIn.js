@@ -35,6 +35,8 @@ const SignIn = () => {
 
         await signInWithEmailAndPassword(email, password);
 
+        navigate('/inventory')
+
     }
     return (
         <div className='m-5 w-50 mx-auto'>

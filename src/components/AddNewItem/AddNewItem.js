@@ -3,8 +3,16 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
 
 const AddNewItem = () => {
-    const { register, handleSubmit } = useForm();
-    
+    const { register, handleSubmit, reset } = useForm({
+        defaultValues:{
+            name:"",
+            shortDescription:"",
+            supplier:"",
+            price:"",
+            picture:"",
+        }
+    });
+    const navigate = useNavigate()
     const onSubmit = data => {
         console.log(data)
         const url = `https://immense-taiga-82894.herokuapp.com/product`;
@@ -20,6 +28,7 @@ const AddNewItem = () => {
         .then(result=>{
             console.log(result)
         })
+        navigate('/inventory')
     };
     
     return (
@@ -32,6 +41,7 @@ const AddNewItem = () => {
             <input className='mb-2 w-50 d-block mx-auto' placeholder='Price' type="number" {...register("price")} /> <br />
             <input className='mb-2 w-50 d-block mx-auto' placeholder='Photo URL' type="text" {...register("picture")} /> <br />
             <input className='w-50 d-block mx-auto' type="submit" />
+            <input onClick={()=>reset()} className='w-50 d-block mx-auto' type="reset" />
         </form>
         </div>
     );

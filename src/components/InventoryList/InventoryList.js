@@ -21,9 +21,9 @@ const InventoryList = () => {
             .then(data => 
                 console.log(data)
             );
-            // const remaining = products.filter(product => product._id !== id)
-            // console.log(remaining)
-            // setProducts(remaining)
+            const remaining = products.filter(product => product._id !== id)
+            console.log(remaining)
+            setProducts(remaining)
         }
 
        console.log('dlt clk')
