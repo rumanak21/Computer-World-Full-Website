@@ -24,7 +24,7 @@ const SignIn = () => {
     }
 
 
-    console.log(error)
+    
 
     const handleSignIn = async (event) => {
         event.preventDefault();

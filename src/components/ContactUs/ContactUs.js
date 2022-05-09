@@ -6,7 +6,7 @@ const ContactUs = () => {
     return (
         <div className='container d-flex justify-content-center align-items-center mt-5'>
             <div className='me-5'>
-                <img width={"90%"} src={image} alt="" srcset="" />
+                <img width={"90%"} src={image} alt=""  />
             </div>
             <div className='d-flex flex-column justify-content-center align-items-center '>
             <h3 className='text-secondary'>Do you have any question?</h3>
